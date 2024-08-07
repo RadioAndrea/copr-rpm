@@ -1,5 +1,5 @@
 %define debug_package %{nil}
-%define repo https://github.com/LGFae/swww
+%define repo github.com/LGFae/swww
 %define version 0.9.5
 
 Name:          swww
