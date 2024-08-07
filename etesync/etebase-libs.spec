@@ -1,5 +1,6 @@
 %define debug_package %{nil}
 %define repo github.com/etesync/libetebase
+%define upstreamname libetebase
 %define version 0.5.6
 
 Name:          etebase-libs
@@ -31,15 +32,15 @@ mkdir -p %{buildroot}%{_includedir}
 install -Dm644 target/etebase.pc -t %{buildroot}%{_libdir}/pkgconfig/
 install -Dm644 EtebaseConfig.cmake -t %{buildroot}%{_libdir}/cmake/Etebase/
 install -Dm644 target/etebase.h -t %{buildroot}%{_includedir}
-install -Dm755 target/release/%{name}.so -t %{buildroot}%{_libdir}
+install -Dm755 target/release/%{upstreamname}.so -t %{buildroot}%{_libdir}
 
 %files
-%{_libdir}/%{name}.so
+%{_libdir}/%{upstreamname}.so
 %{_libdir}/pkgconfig/etebase.pc
 %{_libdir}/cmake/Etebase/EtebaseConfig.cmake
 %{_includedir}/etebase.h
 %if ! 0%{?suse_version}
-%{_libdir}/%{name}.so.0
+%{_libdir}/%{upstreamname}.so.0
 %endif
 
 %changelog
