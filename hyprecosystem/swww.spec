@@ -30,27 +30,16 @@ cargo build --release
 mkdir -p %{buildroot}/%{_bindir}
 install -m 0755 target/release/%{name} %{buildroot}%{_bindir}/%{name}
 install -m 0755 target/release/%{name}-daemon %{buildroot}%{_bindir}/%{name}-daemon
-
-%if %{?bash_completions_dir}
 install -m 0755 completions/%{name}.bash ${bash_completions_dir}${name}.bash
-%endif
-
-%if %{?zsh_completions_dir}
 install -m 0755 completions/_%{name} ${zsh_completions_dir}_${name}
-%endif
-
+install -m 0755 completions/%{name}.fish ${fish_completions_dir}${name}.fish
 
 %files
 %{_bindir}/%{name}
 %{_bindir}/%{name}-daemon
-
-%if %{?bash_completions_dir}
 %{bash_completions_dir}${name}.bash
-%endif
-
-%if %{?zsh_completions_dir}
 ${zsh_completions_dir}_${name}
-%endif
+${fish_completions_dir}${name}.fish
 
 
 %changelog
