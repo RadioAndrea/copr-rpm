@@ -31,11 +31,11 @@ mkdir -p %{buildroot}/%{_bindir}
 install -m 0755 target/release/%{name} %{buildroot}%{_bindir}/%{name}
 install -m 0755 target/release/%{name}-daemon %{buildroot}%{_bindir}/%{name}-daemon
 
-%if 0%{?bash_completions_dir}
+%if %{?bash_completions_dir}
 install -m 0755 completions/%{name}.bash ${bash_completions_dir}${name}.bash
 %endif
 
-%if 0%{?zsh_completions_dir}
+%if %{?zsh_completions_dir}
 install -m 0755 completions/_%{name} ${zsh_completions_dir}_${name}
 %endif
 
@@ -44,11 +44,11 @@ install -m 0755 completions/_%{name} ${zsh_completions_dir}_${name}
 %{_bindir}/%{name}
 %{_bindir}/%{name}-daemon
 
-%if 0%{?bash_completions_dir}
+%if %{?bash_completions_dir}
 %{bash_completions_dir}${name}.bash
 %endif
 
-%if 0%{?zsh_completions_dir}
+%if %{?zsh_completions_dir}
 ${zsh_completions_dir}_${name}
 %endif
 
