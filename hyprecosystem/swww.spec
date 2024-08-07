@@ -11,7 +11,7 @@ License:       GPL-3.0
 URL:           https://%{repo}
 Source0:       https://%{repo}/archive/v%{version}.tar.gz
 
-BuildRequires: cargo lz4
+BuildRequires: cargo liblz4-devel
 
 AutoReq:       no 
 AutoReqProv:   no
