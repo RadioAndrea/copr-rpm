@@ -49,6 +49,7 @@ install -m 0755 -T target/release/%{name}-daemon %{buildroot}%{_bindir}/%{name}-
 %files
 %{_bindir}/%{name}
 %{_bindir}/%{name}-daemon
+%license LICENSE
 
 %if 0%{?bash_completions_dir:1}
     %{bash_completions_dir}/%{name}
